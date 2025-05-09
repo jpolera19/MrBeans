@@ -1,0 +1,760 @@
+/* --- Google Font Import --- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+/* --- CSS Variables --- */
+:root {
+    --cream: #F5F5DC; /* Beige/Cream */
+    --light-brown: #D2B48C; /* Tan */
+    --medium-brown: #A0522D; /* Sienna */
+    --dark-brown: #654321; /* Dark Brown */
+    --text-dark: #333;
+    --text-light: var(--cream);
+    --navbar-height: 70px; /* Adjust as needed */
+}
+
+/* --- General Styles & Resets --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px; /* Base font size */
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: var(--text-dark);
+    background-color: var(--cream); /* Default background */
+}
+
+h1, h2, h3 {
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: var(--dark-brown);
+}
+
+h1 { font-size: 3rem; }
+h2 { font-size: 2.2rem; }
+h3 { font-size: 1.5rem; }
+
+p {
+    margin-bottom: 1rem;
+    max-width: 70ch; /* Improve readability */
+}
+
+a {
+    text-decoration: none;
+    color: var(--medium-brown);
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--medium-brown);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block; /* Prevent bottom space */
+}
+
+ul {
+    list-style: none;
+}
+
+.content-container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 2rem 0; /* Add padding inside sections */
+}
+
+/* --- Buttons --- */
+.btn {
+    display: inline-block;
+    padding: 10px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.2s ease, color 0.3s ease;
+    margin: 5px;
+}
+
+.btn-call {
+    background-color: var(--cream);
+    color: var(--dark-brown);
+    border: 2px solid var(--dark-brown);
+}
+
+.btn-call:hover {
+    background-color: var(--medium-brown);
+    color: var(--cream);
+    transform: translateY(-2px);
+}
+
+.btn-order, .btn-submit {
+    background-color: var(--medium-brown);
+    color: var(--text-light);
+}
+
+.btn-order:hover, .btn-submit:hover {
+    background-color: var(--dark-brown);
+    transform: translateY(-2px);
+}
+
+/* --- Navigation Bar --- */
+/* --- Navigation Bar --- */
+.navbar {
+    background-color: var(--dark-brown);
+    height: var(--navbar-height);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.navbar-container {
+    display: flex;
+    justify-content: space-between; /* Keep space-between for the overall layout */
+    align-items: center;
+    height: 100%;
+    width: 90%;
+    max-width: 1300px;
+}
+
+/* Change the order of elements */
+.nav-logo {
+    order: 1; /* Logo stays first */
+}
+
+.btn-call {
+    order: 2; /* Call Now button on the left side after logo */
+    margin-left: 20px; /* Add space after logo */
+}
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+    margin-left: auto; /* Push menu to the right */
+    order: 3; /* Place the menu last */
+}
+
+.nav-item {
+    margin: 0 1.5rem; /* Increase spacing between nav items (from 1rem to 1.5rem) */
+}
+
+.nav-link {
+    color: var(--cream);
+    font-weight: bold;
+    padding: 5px 0;
+    position: relative; /* For hover effect */
+}
+
+.nav-link::after { /* Underline hover effect */
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--light-brown);
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.nav-link:hover {
+    color: var(--light-brown);
+}
+
+.menu-toggle {
+    display: none; /* Hidden on desktop */
+    background: none;
+    border: none;
+    color: var(--cream);
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+
+/* Add extra margin to the last nav item for balance */
+.nav-item:last-child {
+    margin-right: 0;
+}
+
+/* --- Full Page Sections --- */
+/* --- Full Page Sections --- */
+.full-page-section {
+    /* height: 100vh; */ /* CHANGE THIS... */
+    min-height: 100vh;   /* ...TO THIS (or remove entirely if sections shouldn't force full height) */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    /* Adjust padding: Add more explicit top/bottom space */
+    /* padding: var(--navbar-height) 1rem 2rem 1rem; */ /* CHANGE THIS... */
+    padding-top: calc(var(--navbar-height) + 20px); /* ...TO THIS (Adjust 40px as needed) */
+    padding-bottom: 40px;                         /* ...AND ADD THIS (Adjust 40px as needed) */
+    padding-left: 1rem;                           /* Keep or adjust side padding */
+    padding-right: 1rem;                          /* Keep or adjust side padding */
+
+    width: 100%;
+    /* box-sizing: border-box; is already set globally */
+
+    overflow: hidden; /* <<< ADD THIS LINE <<< */
+}
+
+/* --- Home Section --- */
+.home-section {
+    /* === BACKGROUND IMAGE PLACEHOLDER === */
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.75)), url(images/restaurant.webp) no-repeat center center/cover;
+    /* =================================== */
+    color: var(--text-light);
+}
+
+.home-section h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    color: var(--cream); /* Ensure visibility over background */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.home-section p {
+    font-size: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    color: var(--cream); /* Ensure visibility */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+}
+
+.home-logo {
+    margin-bottom: 1.5rem; /* Space between logo and heading */
+}
+
+.home-logo img {
+    width: 700px; /* Adjust size as needed */
+    height: auto;
+    margin: 0 auto;
+    display: block; /* Center the logo */
+    filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.3)); /* Optional: adds a subtle shadow */
+}
+
+/* --- About Section with side images --- */
+.about-section {
+    background-color: var(--cream);
+}
+
+.about-section h2 {
+    margin-bottom: 1rem;
+}
+
+.about-intro {
+    margin-bottom: 2rem;
+    color: var(--text-dark);
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.about-content-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.about-center-content {
+    flex: 2;  /* Takes up more space than side images */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.about-side-image {
+    flex: 1;
+    max-width: 300px;
+    height: 350px;
+    border: 5px solid var(--light-brown);
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 1rem;
+}
+
+.about-side-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.5s ease;
+}
+
+.about-side-image:hover img {
+    transform: scale(1.05);
+}
+
+.social-links {
+    margin-top: 1rem;
+}
+
+.social-links a {
+    font-size: 3rem; /* Slightly smaller icon for better spacing */
+    color: var(--medium-brown);
+    margin: 0 0.5rem;
+    transition: transform 0.3s ease;
+}
+
+.social-links a:hover {
+    color: var(--dark-brown);
+    transform: scale(1.1);
+}
+
+/* --- Slideshow --- */
+.slideshow-container {
+    width: 100%;  /* Use 100% of parent container */
+    max-width: 500px; /* Maximum width */
+    height: 350px; /* Fixed height - adjusted to match side images */
+    position: relative;
+    margin: 0 auto; /* Center in container */
+    border: 5px solid var(--light-brown);
+    border-radius: 8px;
+    overflow: hidden; /* Ensures images stay within border */
+    box-sizing: content-box; /* Ensures border doesn't affect dimensions */
+}
+
+/* Hide the images by default */
+.mySlides {
+    position: absolute; /* Position absolutely within container */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none; /* Hidden by default */
+  }
+
+.mySlides img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Makes images cover the container area */
+  object-position: center; /* Centers the image */
+}
+
+/* Next & previous buttons */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%); /* Center vertically */
+    width: auto;
+    padding: 16px;
+    color: var(--cream);
+    background-color: rgba(90, 65, 33, 0.6); /* Semi-transparent dark brown */
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.3s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    z-index: 10; /* Ensure buttons are above images */
+  }
+
+/* Position the "next button" to the right */
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+  }
+  
+  /* Position the "prev button" to the left */
+  .prev {
+    left: 0;
+  }
+  
+  /* On hover, add a darker background color */
+  .prev:hover, .next:hover {
+    background-color: rgba(101, 67, 33, 0.9); /* Darker brown */
+  }
+  
+  /* Fading animation */
+  .fade {
+    animation-name: fade;
+    animation-duration: 2s;
+  }
+  
+  @keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+  }
+
+
+/* --- Menu Section --- */
+.menu-section {
+    background-color: var(--light-brown);
+}
+.menu-section h2 {
+    margin-bottom: 1rem; /* Reduce space after heading */
+    text-align: center;
+}
+
+/* Style specifically for the menu introduction paragraph */
+.menu-section > .content-container > p {
+    text-align: center;
+    max-width: 800px; /* Limit width for better readability */
+    margin: 0 auto 2.5rem auto; /* Center horizontally with bottom margin */
+    font-size: 1.1rem; /* Slightly larger text */
+    line-height: 1.6;
+    color: var(--text-dark); /* Make sure text stands out against background */
+    font-weight: 400; /* Medium weight for better visibility */
+    padding: 0 1rem; /* Add some padding on smaller screens */
+}
+
+/* Add a subtle separator between intro text and menu items */
+.menu-section > .content-container > p:after {
+    content: "";
+    display: block;
+    width: 50px;
+    height: 3px;
+    background-color: var(--cream);
+    margin: 1.5rem auto 0 auto;
+    opacity: 0.7;
+}
+
+.menu-categories {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    gap: 2rem; /* Space between cards */
+    margin-bottom: 2.5rem;
+}
+
+.menu-category {
+    background-color: var(--cream);
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    flex: 1; /* Allow flex items to grow/shrink */
+    min-width: 250px; /* Minimum width before wrapping */
+    max-width: 300px; /* Maximum width */
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.menu-category:hover {
+    transform: scale(1.05) translateY(-5px); /* Slightly larger and lifted */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.menu-category h3 {
+    color: var(--dark-brown);
+    margin-bottom: 0.5rem;
+}
+
+.menu-category p {
+    font-size: 0.95rem;
+    color: var(--text-dark);
+    margin-bottom: 1rem;
+}
+
+.menu-category img {
+    width: 100%;
+    height: 180px; /* Fixed height for consistency */
+    object-fit: cover; /* Cover the area without distortion */
+    border-radius: 4px;
+    margin-top: auto; /* Push image to bottom if text is short */
+}
+
+.order-buttons {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+
+/* --- Contact Section --- */
+.contact-section {
+    background-color: var(--cream);
+}
+.contact-layout {
+    display: flex;
+    flex-wrap: wrap; /* Allow stacking on smaller screens */
+    gap: 2rem;
+    text-align: left; /* Align text left within containers */
+    align-items: flex-start; /* Align items to top */
+}
+
+.contact-info, .contact-form-container {
+    flex: 1; /* Each takes half the space */
+    min-width: 300px; /* Minimum width before stacking */
+}
+.contact-section h2, .contact-section h3 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+/* Styling for contact hours alignment */
+.contact-info .day {
+    display: inline-block;
+    min-width: 100px; /* Adjust this width as needed */
+    text-align: left;
+}
+
+.contact-info .time {
+    text-align: right;
+}
+.map-placeholder {
+    width: 100%;
+    height: 300px; /* Adjust as needed */
+    background-color: var(--light-brown); /* Placeholder background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--dark-brown);
+    font-style: italic;
+    margin-bottom: 1rem;
+    border-radius: 5px;
+    overflow: hidden; /* Ensure iframe fits */
+}
+.map-placeholder iframe {
+    border-radius: 5px;
+}
+
+.contact-info p {
+    margin-bottom: 0.8rem;
+}
+.contact-info strong {
+    color: var(--dark-brown);
+}
+
+.contact-form-container label {
+    display: block;
+    margin-bottom: 0.3rem;
+    font-weight: bold;
+    color: var(--dark-brown);
+}
+
+.contact-form-container input,
+.contact-form-container textarea {
+    width: 100%;
+    padding: 0.8rem;
+    margin-bottom: 1rem;
+    border: 1px solid var(--light-brown);
+    border-radius: 4px;
+    font-family: inherit; /* Use body font */
+    font-size: 1rem;
+}
+.contact-form-container input:focus,
+.contact-form-container textarea:focus {
+    outline: none;
+    border-color: var(--medium-brown);
+    box-shadow: 0 0 5px rgba(160, 82, 45, 0.3); /* Sienna color shadow */
+}
+
+.contact-form-container .btn-submit {
+    width: 100%;
+    padding: 12px;
+    margin-top: 0.5rem;
+}
+
+
+/* --- Footer --- */
+footer {
+    background-color: var(--dark-brown);
+    color: var(--cream);
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: auto; /* Push footer to bottom if content is short */
+}
+
+
+/* --- Media Queries for Responsiveness --- */
+
+/* Media query for responsive behavior */
+@media (max-width: 992px) {
+    .about-content-wrapper {
+        flex-direction: column;
+    }
+    
+    .about-side-image {
+        max-width: 90%;
+        width: 400px;
+    }
+    
+    .about-center-content {
+        width: 90%; /* Ensure center content uses most of screen width */
+        max-width: none; /* Remove max-width constraint on mobile */
+    }
+    
+    .slideshow-container {
+        width: 100%; /* Full width of parent */
+        max-width: none; /* Remove max-width constraint */
+        height: 300px; /* Slightly smaller height on mobile */
+    }
+    
+    .about-side-image.right-image {
+        order: 3; /* Move right image to bottom on mobile */
+    }
+    
+    .about-center-content {
+        order: 2; /* Keep center content in middle */
+    }
+    
+    .about-side-image.left-image {
+        order: 1; /* Keep left image at top on mobile */
+    }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+    .home-section h1 { font-size: 4.5rem; }
+    .home-section p { font-size: 1.3rem; }
+}
+
+
+
+/* Mobile devices (max-width: 768px) */
+@media (max-width: 768px) {
+    html { font-size: 15px; } /* Slightly smaller base font */
+
+    .navbar-container {
+        width: 95%; /* More space on mobile */
+    }
+
+    .nav-menu {
+        display: none; /* Hide desktop menu */
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: var(--navbar-height);
+        left: 0; /* Start hidden off-screen */
+        /* left: -100%; */
+        background-color: var(--dark-brown);
+        /* transition: left 0.4s ease-in-out; */
+        padding: 1rem 0;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        opacity: 0;
+        transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
+        transform: translateY(-10px); /* Start slightly up */
+        pointer-events: none; /* Prevent interaction when hidden */
+    }
+
+    .nav-menu.active {
+        display: flex; /* Show mobile menu */
+        left: 0;      /* Slide in */
+        opacity: 1;
+        transform: translateY(0);
+        pointer-events: auto;
+    }
+
+    .nav-item {
+        margin: 1rem 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-link {
+        display: block; /* Make link take full width */
+        padding: 0.5rem 0;
+    }
+    .nav-link::after { /* Hide underline on mobile nav items */
+       display: none;
+    }
+
+    .menu-toggle {
+        display: block; /* Show hamburger */
+        order: 3; /* Move hamburger after call button if needed */
+    }
+
+    .navbar .btn-call {
+        order: 2; /* Keep call button visible */
+        margin-right: 1rem; /* Space before hamburger */
+        padding: 8px 15px; /* Slightly smaller */
+        font-size: 0.9rem;
+    }
+    .nav-logo { order: 1;}
+
+    h1 { font-size: 2.5rem; }
+    h2 { font-size: 1.8rem; }
+    h3 { font-size: 1.3rem; }
+
+    .full-page-section {
+        min-height: auto; /* Allow sections to shrink based on content */
+        /* padding: 3rem 1rem; */ /* This padding looks okay, adjust if needed */
+        /* Let's make mobile padding consistent with the desktop update style */
+        padding-top: calc(var(--navbar-height, 60px) + 15px); /* Adjust 20px if needed, added fallback */
+        padding-bottom: 30px;                         /* Adjust 30px if needed */
+        padding-left: 1rem;
+        padding-right: 1rem;
+        /* overflow: hidden; is inherited */
+    }
+
+        
+
+    .menu-categories {
+        flex-direction: column; /* Stack menu items */
+        align-items: center; /* Center stacked items */
+        gap: 1.5rem;
+    }
+    .menu-category {
+        width: 90%; /* Wider cards on mobile */
+        max-width: 350px; /* Limit max width */
+    }
+
+    .contact-layout {
+        flex-direction: column; /* Stack contact info and form */
+        align-items: center;
+    }
+    .contact-info, .contact-form-container {
+        width: 90%;
+        max-width: 450px; /* Limit width */
+        text-align: center; /* Center text */
+    }
+    .contact-info p {
+        text-align: center;
+    }
+    .contact-form-container {
+         margin-top: 1rem;
+    }
+
+    .slideshow-container {
+        width: 90%;
+        height: 300px;
+    }
+
+}
+
+/* Additional media query for very small screens */
+@media (max-width: 576px) {
+    .about-side-image,
+    .about-center-content {
+        width: 100%; /* Full width on very small screens */
+    }
+    
+    .slideshow-container {
+        min-width: 90%; /* Minimum width to prevent it from becoming too skinny */
+        height: 250px; /* Even smaller height on very small screens */
+    }
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+    .menu-section > .content-container > p {
+        font-size: 1rem;
+        margin-bottom: 2rem;
+    }
+}

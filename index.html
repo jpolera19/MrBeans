@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mr. Beans Coffee Co.</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+
+<!-- Updated navbar without logo -->
+<nav class="navbar">
+    <div class="navbar-container">
+        <!-- Logo removed from here -->
+        <button class="menu-toggle" id="mobile-menu" aria-label="Open Menu">
+            <i class="fas fa-bars"></i>
+        </button>
+
+        <ul class="nav-menu" id="nav-menu-list">
+            <li class="nav-item"><a href="#home" class="nav-link">Home</a></li>
+            <li class="nav-item"><a href="#about" class="nav-link">About Us</a></li>
+            <li class="nav-item"><a href="#menu" class="nav-link">Menu</a></li>
+            <li class="nav-item"><a href="#contact" class="nav-link">Contact Us</a></li>
+        </ul>
+        <a href="tel:+4162849222" class="btn btn-call"> Call Now
+        </a>
+    </div>
+</nav>
+
+<!-- Updated home section with large logo -->
+<section id="home" class="full-page-section home-section">
+    <div class="home-content">
+        <!-- Added logo above the heading -->
+        <div class="home-logo">
+            <img src="images/cleanerlogo.png" alt="Mr. Beans Coffee Co. Logo">
+        </div>
+        <!--  <h1>Mr. Beans Coffee Co.</h1> -->
+        <p>Welcome to your daily dose of happiness. We serve expertly crafted coffee, delicious bites, and a warm atmosphere to brighten your day. Come on in and feel at home.</p>
+    </div>
+</section>
+
+
+<!-- Updated About Us section -->
+<section id="about" class="full-page-section about-section">
+    <div class="content-container">
+        <h2>About Us</h2>
+        <p class="about-intro">Founded with a passion for great coffee and community, Mr. Beans Coffee Co. serves Port Union with fresh coffee, food and pastries. We believe in sourcing the finest beans, supporting sustainable practices, and creating a welcoming space where connections are brewed over every cup. Our team is dedicated to providing you with exceptional service and a perfect coffee experience, every single time.</p>
+
+        <div class="about-content-wrapper">
+            <!-- Left side image -->
+            <div class="about-side-image left-image">
+                <img src="images/icecoffee.jpg" alt="Barista preparing coffee">
+            </div>
+            
+            <!-- Center content with slideshow -->
+            <div class="about-center-content">
+                <div class="slideshow-container">
+                    <div class="mySlides fade">
+                        <img src="images/outside.webp" alt="Mr. Beans Entrance">
+                    </div>
+                    <div class="mySlides fade">
+                        <img src="images/ingredients.webp" alt="Slide 2 Description">
+                    </div>
+                    <div class="mySlides fade">
+                        <img src="images/combo2.webp" alt="Slide 3 Description">
+                    </div>
+                    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                </div>
+                
+                <div class="social-links">
+                    <a href="https://www.instagram.com/mr.beanscoffee/?hl=en" target="_blank" rel="noopener noreferrer" aria-label="Visit our Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Right side image -->
+            <div class="about-side-image right-image">
+                <img src="images/bagel.jpg" alt="Fresh coffee beans">
+            </div>
+        </div>
+    </div>
+</section>
+
+    <section id="menu" class="full-page-section menu-section">
+         <div class="content-container">
+            <h2>Our Menu</h2>
+            <p>Featuring a curated selection of bold, freshly brewed coffees, flaky pastries made in-house, and a variety of satisfying sandwiches and bagels — all crafted with quality ingredients to keep you going any time of day.</p>
+            <div class="menu-categories">
+                <div class="menu-category">
+                    <h3>Coffee</h3>
+                    <p>From classic espresso drinks to unique signature blends, made to your preference.</p>
+                     <img src="images/coffee2.jpg" alt="Artisan Coffee">
+                    </div>
+                <div class="menu-category">
+                    <h3>Food</h3>
+                    <p>Delicious pastries, sandwiches, and light bites perfect for breakfast, lunch, or a snack.</p>
+                    <img src="images/sandwich.webp" alt="Fresh Pastry">
+                     </div>
+                <div class="menu-category">
+                    <h3>Dessert</h3>
+                    <p>Sweet treats to complement your coffee, including cakes, cookies, and more.</p>
+                    <img src="images/redvelvet.jpg" alt="Tasty Cake Slice">
+                    </div>
+            </div>
+
+            <div class="order-buttons">
+                 <a href="https://www.skipthedishes.com/mr-beans-coffee-co" target="_blank" rel="noopener noreferrer" class="btn btn-order">Order on Skip</a>
+                <a href="https://www.ubereats.com/ca/store/mr-beans-coffee-company/po6w5UaHSWqThlGzcE2rmg" target="_blank" rel="noopener noreferrer" class="btn btn-order">Order on Uber</a>
+                </div>
+         </div>
+    </section>
+
+    <section id="contact" class="full-page-section contact-section">
+        <div class="content-container contact-layout">
+            <div class="contact-info">
+                <h2>Contact & Visit Us</h2>
+                <div class="map-placeholder">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2880.673979074438!2d-79.1379279!3d43.77962600000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89d4dbbc8c7860e9%3A0xa14f437d9ae69f68!2sMr%20Beans%20Coffee%20Co!5e0!3m2!1sen!2sca!4v1746462791290!5m2!1sen!2sca"
+                        width="100%"
+                        height="300"
+                        style="border:0;"
+                        allowfullscreen=""
+                        loading="eager"
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+                <p><strong>Address:</strong><br> 5550 Lawrence Ave E,<br> Scarborough, Ontario, M1C 3B2</p>
+                <p><strong>Phone:</strong> <a href="tel:+4162849222">(416) 284-9222</a></p>
+                <p><strong>Hours:</strong><br> 
+                    <span class="day">Mon - Fri:</span> <span class="time">6:30am - 6pm</span><br>
+                    <span class="day">Sat:</span> <span class="time">7am - 6pm</span><br>
+                    <span class="day">Sun:</span> <span class="time">7:30am - 5pm</span>
+                </p>
+            </div>
+            <div class="contact-form-container">
+                <h3>Send us a message!</h3>
+                <form id="contact-form" action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+    
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+    
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+    
+                    <button type="submit" class="btn btn-submit">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; <span id="current-year"></span> Mr. Beans Coffee Co. All Rights Reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
