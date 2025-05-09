@@ -145,16 +145,19 @@
             </div>
             <div class="contact-form-container">
                 <h3>Send us a message!</h3>
-                <form id="contact-form" action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST">
+                <form id="contact-form" name="contact" method="POST" data-netlify="true">
                     <label for="name">Name:</label>
                     <input type="text" id="name" name="name" required>
-    
+            
                     <label for="email">Email:</label>
                     <input type="email" id="email" name="email" required>
-    
+            
                     <label for="message">Message:</label>
                     <textarea id="message" name="message" rows="5" required></textarea>
-    
+            
+                    <!-- This hidden field helps Netlify identify the form -->
+                    <input type="hidden" name="form-name" value="contact" />
+                    
                     <button type="submit" class="btn btn-submit">Send Message</button>
                 </form>
             </div>
